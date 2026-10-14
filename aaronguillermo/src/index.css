@@ -36,7 +36,7 @@ html {
 html { scroll-padding-top: 88px; }
 body { margin: 0; }
 :root { --layout-gap: 20px; --card-padding: 24px; --card-radius: 26px; --nav-padding: 20px; }
-.page-shell { width: 100%; margin-inline: auto; padding: clamp(16px, 3vw, 64px); }
+.page-shell { width: 100%; max-width: 896px; margin-inline: auto; padding: 24px; }
 .layout-stack { display: flex; flex-direction: column; gap: var(--layout-gap); }
 .layout-grid { gap: var(--layout-gap); }
 .layout-grid > *, .layout-stack > * { min-width: 0; }
@@ -49,7 +49,7 @@ body { margin: 0; }
 .section-card p, .section-card h3, .project-preview, .modal-content { overflow-wrap: anywhere; }
 .skill-groups > section:first-child { padding-top: 0; }
 .skill-groups > section:last-child { padding-bottom: 0; }
-.site-header { padding: 12px clamp(16px, 3vw, 64px); }
+.site-header { padding: 12px 24px; }
 .hero-section { padding-block: 24px; min-height: 350px; }
 .hero-content { width: 100%; max-width: 620px; }
 .hero-eyebrow { width: 100%; max-width: 100%; margin-inline: auto; text-align: center; font-size: 10px; line-height: 1.8; letter-spacing: .1em; text-wrap: balance; }
@@ -79,7 +79,6 @@ section[id] { scroll-margin-top: 24px; }
 .tech-badge > span:last-child { min-width: 0; overflow-wrap: anywhere; }
 .tech-icon { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 18px; width: 18px; height: 18px; padding: 2px; border-radius: 4px; background: #fff; }
 .tech-icon img { width: 14px; height: 14px; object-fit: contain; }
-.tech-symbol { flex-shrink: 0; }
 .app-builder-card { color: #ecfdf5; background: #047857; border: 1px solid #6ee7b74d; box-shadow: inset 0 1px 0 #ffffff26, inset 0 -1px 0 #022c2233, 0 16px 48px #00000014; }
 .app-builder-item { color: #ecfdf5; background: linear-gradient(145deg, #ffffff12, transparent 48%), linear-gradient(180deg, #08634b, #064e3b); border: 1px solid #6ee7b74d; box-shadow: inset 0 2px 1px #a7f3d040, inset 0 -2px 1px #022c2280, 0 3px 0 #023c2e, 0 8px 18px #022c224d; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
 .app-builder-item::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(110deg, transparent 25%, #d1fae526 45%, transparent 65%); transform: translateX(-120%); transition: transform .65s ease; }

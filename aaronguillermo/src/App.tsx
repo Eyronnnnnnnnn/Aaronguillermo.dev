@@ -479,7 +479,7 @@ export default function App() {
           className="site-nav pointer-events-auto flex items-center justify-between gap-2 border shadow-lg"
           style={{
             width: "100%",
-            maxWidth: isScrolled ? "460px" : "100%",
+            maxWidth: isScrolled ? "460px" : "848px",
             height: isScrolled ? "44px" : "56px",
             borderRadius: isScrolled ? "999px" : "16px",
             paddingLeft: "var(--nav-padding)",

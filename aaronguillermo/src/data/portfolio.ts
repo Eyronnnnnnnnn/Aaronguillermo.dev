@@ -7,7 +7,7 @@ import aiEngineerCertificate from "../assets/photos/Certifications/AI ENGINEER F
 import datacampLogo from "../assets/photos/Certifications/datacamp-logo.svg";
 import mapuaLogo from "../assets/photos/Certifications/mapua-logo.png";
 export const YEARS = [2026, 2025, 2024];
-const DEVICON_BASE = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
+import { TECH_LOGOS } from "./techLogos";
 export type Project = { id: number; title: string; desc: string; tags: string[]; image: string; icon?: string; role?: string; details?: string; status?: string };
 export const PROJECTS: Record<number, Project[]> = {
 2026: [
@@ -70,21 +70,21 @@ export const CERTS: Certificate[] = [
 
 export type Skill = { name: string; src?: string; custom?: "sql" | "nosql"; invertOnDark?: boolean };
 export const SKILLS: Skill[] = [
-  { name: "HTML", src: `${DEVICON_BASE}/html5/html5-original.svg` },
-  { name: "CSS", src: `${DEVICON_BASE}/css3/css3-original.svg` },
-  { name: "JavaScript", src: `${DEVICON_BASE}/javascript/javascript-original.svg` },
-  { name: "Java", src: `${DEVICON_BASE}/java/java-original.svg` },
-  { name: "React.js", src: `${DEVICON_BASE}/react/react-original.svg` },
-  { name: "Next.js", src: `${DEVICON_BASE}/nextjs/nextjs-original.svg`, invertOnDark: true },
-  { name: "Node.js", src: `${DEVICON_BASE}/nodejs/nodejs-original.svg` },
-  { name: "Express.js", src: `${DEVICON_BASE}/express/express-original.svg`, invertOnDark: true },
+  { name: "HTML", src: TECH_LOGOS.HTML },
+  { name: "CSS", src: TECH_LOGOS.CSS },
+  { name: "JavaScript", src: TECH_LOGOS.JavaScript },
+  { name: "Java", src: TECH_LOGOS.Java },
+  { name: "React.js", src: TECH_LOGOS["React.js"] },
+  { name: "Next.js", src: TECH_LOGOS["Next.js"], invertOnDark: true },
+  { name: "Node.js", src: TECH_LOGOS["Node.js"] },
+  { name: "Express.js", src: TECH_LOGOS["Express.js"], invertOnDark: true },
   { name: "SQL", custom: "sql" },
   { name: "NoSQL", custom: "nosql" },
-  { name: "MongoDB", src: `${DEVICON_BASE}/mongodb/mongodb-original.svg` },
-  { name: "Docker", src: `${DEVICON_BASE}/docker/docker-original.svg` },
-  { name: "Git", src: `${DEVICON_BASE}/git/git-original.svg` },
-  { name: "GitHub", src: `${DEVICON_BASE}/github/github-original.svg`, invertOnDark: true },
-  { name: "VS Code", src: `${DEVICON_BASE}/vscode/vscode-original.svg` },
+  { name: "MongoDB", src: TECH_LOGOS.MongoDB },
+  { name: "Docker", src: TECH_LOGOS.Docker },
+  { name: "Git", src: TECH_LOGOS.Git },
+  { name: "GitHub", src: TECH_LOGOS.GitHub, invertOnDark: true },
+  { name: "VS Code", src: TECH_LOGOS["VS Code"] },
 ];
 
 export const SKILL_GROUPS: { name: string; skills: Skill[] }[] = [
@@ -94,5 +94,5 @@ export const SKILL_GROUPS: { name: string; skills: Skill[] }[] = [
   { name: "Software Engineering", skills: ["Agile", "Scrum", "System Design", "System Architecture"].map((name) => ({ name })) },
   { name: "AI Tools", skills: ["Codex", "Claude (Anthropic)", "Generative AI"].map((name) => ({ name })) },
   { name: "Deployment Platforms", skills: [{ name: "Vercel" }, { name: "Render" }, ...SKILLS.filter((s) => s.name === "Docker")] },
-  { name: "Tools", skills: [...SKILLS.filter((s) => ["Git", "GitHub", "VS Code"].includes(s.name)), { name: "Figma", src: `${DEVICON_BASE}/figma/figma-original.svg` }] },
+  { name: "Tools", skills: [...SKILLS.filter((s) => ["Git", "GitHub", "VS Code"].includes(s.name)), { name: "Figma", src: TECH_LOGOS.Figma }] },
 ];

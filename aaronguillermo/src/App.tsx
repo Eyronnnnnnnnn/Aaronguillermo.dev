@@ -240,7 +240,7 @@ function AllProjectsPage({ T }: { T: Theme }) {
         <p className="text-[10px] font-mono mb-1" style={{ color: T.muted }}>ALL PROJECTS</p>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Everything I've shipped.</h2>
       </div>
-      {YEARS.map((y) => (
+      {YEARS.filter((y) => (PROJECTS[y] ?? []).length > 0).map((y) => (
         <section key={y} style={bubble(T)} className="section-card">
           <p className="text-[10px] font-mono mb-4" style={{ color: T.muted }}>{y}</p>
           <div className="space-y-3">

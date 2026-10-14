@@ -14,13 +14,13 @@ export const PROJECTS: Record<number, Project[]> = {
   {
     id: 1,
     title: "Chaindaan",
-    desc: "An ongoing academic project where I apply and develop my software development skills as a BSIT student.",
+    desc: "Chain-Daan is an ongoing academic software engineering project that brings together frontend development, backend services, and database integration in a full-stack web application.",
     image: chaindaanCover,
     icon: chaindaanLogo,
     role: "Full Stack Developer (Solo Developer)",
-    details: "Driving the full-stack development of Chain-Daan as the solo developer in a five-member BSIT team, translating project requirements into an integrated application across the frontend and backend.",
+    details: "As the sole developer in a five-member BSIT team, I am responsible for translating project requirements into working features across the frontend and backend. My work connects the React interface with Node.js and Express services, integrates MongoDB for data storage, and incorporates Cloudinary and Socket.IO for media handling and real-time communication. This role applies software engineering principles to organize the codebase and keep application components working together as development progresses.",
     status: "In Development",
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Cloudinary", "Socket.IO"],
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Cloudinary", "Socket.IO", "Software Engineering"],
   },
 ],
 };
@@ -30,7 +30,7 @@ export const EXPERIENCE = [
     role: "Full Stack Developer (Solo Developer)",
     company: "Chain-Daan | Academic Software Engineering Project",
     period: "2026 — Present",
-    desc: "Driving the full-stack development of Chain-Daan as the solo developer in a five-member BSIT team, translating project requirements into an integrated application across the frontend and backend.",
+    desc: "Responsible for the full-stack development of Chain-Daan within a five-member BSIT team. As the sole developer, I translate project requirements into application features, build the frontend and backend, and integrate database, media, and real-time services into a cohesive web application.",
   },
 ];
 
@@ -62,7 +62,7 @@ export const CERTS: Certificate[] = [
     year: "2026",
     logo: mapuaLogo,
     logoAlt: "Mapúa University logo",
-   desc: "Developed skills in integrating generative AI into software applications, including working with large language models, prompt engineering, and building AI-powered solutions.",
+   desc: "Developed foundational AI literacy, with an emphasis on understanding AI capabilities and limitations, critically evaluating AI-generated content, and applying ethical and privacy-conscious practices when using AI tools.",
   },
 
  
@@ -96,5 +96,3 @@ export const SKILL_GROUPS: { name: string; skills: Skill[] }[] = [
   { name: "Deployment Platforms", skills: [{ name: "Vercel" }, { name: "Render" }, ...SKILLS.filter((s) => s.name === "Docker")] },
   { name: "Tools", skills: [...SKILLS.filter((s) => ["Git", "GitHub", "VS Code"].includes(s.name)), { name: "Figma", src: `${DEVICON_BASE}/figma/figma-original.svg` }] },
 ];
-
-

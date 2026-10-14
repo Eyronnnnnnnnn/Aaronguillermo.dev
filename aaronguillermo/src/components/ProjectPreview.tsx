@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { Project } from "../data/portfolio";
 import type { Theme } from "../theme/palette";
+import TechBadge from "./TechBadge";
 
 function ProjectImage({ project }: { project: Project }) {
   const [failed, setFailed] = useState(false);
@@ -27,7 +28,7 @@ function ProjectModal({ project, T, onClose }: { project: Project; T: Theme; onC
         <div><p className="text-[10px] tracking-[.2em] font-mono mb-3" style={{ color: T.muted }}>PROJECT OVERVIEW</p><h2 id={titleId} className="text-2xl sm:text-3xl font-semibold tracking-tight">{project.title}</h2>{project.status && <span className="glass-chip mt-4" style={{ borderColor: T.glassBorder, color: T.accent }}>{project.status}</span>}</div>
         <div className="space-y-3 text-sm leading-relaxed" style={{ color: T.muted }}><p>{project.desc}</p>{project.details && <p>{project.details}</p>}</div>
         {project.role && <div className="border-t pt-5" style={{ borderColor: T.glassBorder }}><p className="text-[10px] tracking-widest mb-2" style={{ color: T.muted }}>MY ROLE</p><p className="text-xs font-medium">{project.role}</p></div>}
-        <div><h3 className="text-[10px] tracking-widest mb-3" style={{ color: T.muted }}>TECH STACK</h3><div className="flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="glass-chip" style={{ borderColor: T.glassBorder }}>{tag}</span>)}</div></div>
+        <div><h3 className="text-[10px] tracking-widest mb-3" style={{ color: T.muted }}>TECH STACK</h3><div className="flex flex-wrap gap-2">{project.tags.map((tag) => <TechBadge key={tag} name={tag} T={T} />)}</div></div>
       </div>
     </div>
   </dialog>, document.body);
@@ -43,7 +44,7 @@ export default function ProjectPreview({ project, T, compact = false, onExplore 
     <span className="flex min-w-0 flex-1 flex-col gap-2">
       <span className="flex flex-wrap items-center justify-between gap-2"><span className="text-sm font-semibold">{project.title}</span><span className="text-[9px] font-mono" style={{ color: T.accent }}>{project.status}</span></span>
       <span className="text-xs leading-relaxed" style={{ color: T.muted }}>{project.desc}</span>
-      <span className="flex flex-wrap gap-1.5">{project.tags.map((tag) => <span key={tag} className="glass-chip" style={{ borderColor: T.glassBorder }}>{tag}</span>)}</span>
+      <span className="flex flex-wrap gap-1.5">{project.tags.map((tag) => <TechBadge key={tag} name={tag} T={T} />)}</span>
     </span>
   </button>;
   return <>
@@ -53,7 +54,7 @@ export default function ProjectPreview({ project, T, compact = false, onExplore 
         <span className="text-[9px] font-mono tracking-widest uppercase" style={{ color: T.accent }}>{project.status || "Project"}</span>
         <span className="text-xl font-semibold tracking-tight">{project.title}</span>
         <span className="text-xs leading-relaxed" style={{ color: T.muted }}>{project.desc}</span>
-        <span className="flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="glass-chip" style={{ borderColor: T.glassBorder }}>{tag}</span>)}</span>
+        <span className="flex flex-wrap gap-2">{project.tags.map((tag) => <TechBadge key={tag} name={tag} T={T} />)}</span>
         <span className="text-[11px] mt-2" style={{ color: T.accent }}>Explore project <span aria-hidden="true">↗</span></span>
       </span>
     </button>

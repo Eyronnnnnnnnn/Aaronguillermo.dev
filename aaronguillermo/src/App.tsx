@@ -6,6 +6,7 @@ import PremiumDrone from "./components/PremiumDrone";
 import { useEffect, useMemo, useRef, useState } from "react";
 import ProfilePhoto from "./components/ProfilePhoto";
 import ProjectPreview from "./components/ProjectPreview";
+import TechBadge from "./components/TechBadge";
 import mmsuLogo from "./assets/photos/Education-logo/Teal Mariano Marcos State University Seal.png";
 import chaindaanLogo from "./assets/photos/ChainDaan-logo/chaindaan.logo.png";
 
@@ -227,7 +228,7 @@ function EduMark({ variant }: { variant: "mmsu" | "generic" }) {
 // monoline icons for the generic "SQL" / "NoSQL" categories. Grayscale at
 // rest, full color on hover — a minimalist grid that still reads clearly.
 // ---------------------------------------------------------------------------
-function SkillBadge({ skill, T }: { skill: Skill; T: Theme }) { return <span className="glass-chip skill-text" style={{ color: T.text, borderColor: T.glassBorder }}>{skill.name}</span>; }
+function SkillBadge({ skill, T }: { skill: Skill; T: Theme }) { return <TechBadge name={skill.name} T={T} />; }
 
 // ---------------------------------------------------------------------------
 // "Another page" sub-views — pushed in over the home content, with a Back
@@ -478,7 +479,7 @@ export default function App() {
           className="site-nav pointer-events-auto flex items-center justify-between gap-2 border shadow-lg"
           style={{
             width: "100%",
-            maxWidth: isScrolled ? "460px" : "848px",
+            maxWidth: isScrolled ? "460px" : "100%",
             height: isScrolled ? "44px" : "56px",
             borderRadius: isScrolled ? "999px" : "16px",
             paddingLeft: "var(--nav-padding)",
@@ -708,7 +709,7 @@ export default function App() {
                 <p className="text-[10px] font-mono" style={{ color: T.muted }}>08 — PROJECTS</p>
                 <div className="flex items-center gap-2">
                   <div className="flex gap-1">
-                    {YEARS.map((y) => (
+                    {YEARS.filter((y) => (PROJECTS[y] ?? []).length > 0).map((y) => (
                       <button
                         key={y}
                         onClick={() => { playIosClickSound(); setYear(y); }}

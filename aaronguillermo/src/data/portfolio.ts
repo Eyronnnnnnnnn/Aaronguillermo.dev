@@ -77,7 +77,7 @@ export const SKILLS: Skill[] = [
   { name: "React.js", src: `${DEVICON_BASE}/react/react-original.svg` },
   { name: "Next.js", src: `${DEVICON_BASE}/nextjs/nextjs-original.svg`, invertOnDark: true },
   { name: "Node.js", src: `${DEVICON_BASE}/nodejs/nodejs-original.svg` },
-  { name: "Express.js", src: `${DEVICON_BASE}/express/express-original-wordmark.svg`, invertOnDark: true },
+  { name: "Express.js", src: `${DEVICON_BASE}/express/express-original.svg`, invertOnDark: true },
   { name: "SQL", custom: "sql" },
   { name: "NoSQL", custom: "nosql" },
   { name: "MongoDB", src: `${DEVICON_BASE}/mongodb/mongodb-original.svg` },

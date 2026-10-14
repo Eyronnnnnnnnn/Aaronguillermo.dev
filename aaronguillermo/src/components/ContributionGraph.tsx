@@ -4,8 +4,8 @@ import { GITHUB_URL, GITHUB_USERNAME } from "../data/portfolio";
 import type { CSSProperties } from "react";
 import type { Theme } from "../theme/palette";
 
-const dotSizes = [2, 4, 6, 9, 12];
-const darkDotColors = ["#262629", "#606064", "#8A8A8E", "#B6B6BA", "#DEDEE0"];
+const dotSizes = [3, 5, 7, 10, 13];
+const darkDotColors = ["#45454b", "#727278", "#A0A0A8", "#CCCCD2", "#F4F4F7"];
 const lightDotColors = ["#DADADD", "#ABABB0", "#85858C", "#5E5E66", "#35353C"];
 // Stable count thresholds keep the same activity looking the same across dates.
 const activityLevel = (count: number) =>
@@ -46,7 +46,7 @@ export default function GithubDotContribution({ dark, T }: { dark: boolean; T: T
 
   return (
     <div className="contribution-calendar w-full min-w-0" data-theme={dark ? "dark" : "light"} style={{ color: T.muted, backgroundColor: T.glass, borderColor: T.glassBorder, "--contribution-ink": T.text, "--contribution-scrollbar": dark ? "#343438" : "#C3C3C8", "--contribution-columns": weeks || 53 } as CSSProperties}>
-      <div className="flex items-center justify-between gap-3 text-[8px]">
+      <div className="flex flex-wrap items-center justify-between gap-3 text-[10px]">
         <h2 className="font-mono uppercase tracking-[0.16em]">GitHub activity</h2>
         <a href={GITHUB_URL} target="_blank" rel="noreferrer" className="contribution-profile">@{GITHUB_USERNAME} <span aria-hidden="true">&#8599;</span></a>
       </div>
@@ -102,7 +102,7 @@ export default function GithubDotContribution({ dark, T }: { dark: boolean; T: T
                       }
                     }}
                   >
-                    <span aria-hidden="true" className="contribution-dot" data-level={level} style={{ width: dotSizes[level], height: dotSizes[level], backgroundColor: dotColors[level] }} />
+                    <span aria-hidden="true" className="contribution-dot" data-level={level} style={{ width: dotSizes[level], aspectRatio: "1", backgroundColor: dotColors[level] }} />
                   </button>
                 );
               })}

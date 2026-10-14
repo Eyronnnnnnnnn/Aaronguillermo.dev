@@ -287,7 +287,10 @@ function CertificateModal({ certificate, T, onClose }: { certificate: Certificat
         <div className="modal-content min-w-0 flex flex-col justify-center gap-4">
           <span className="text-[10px] font-mono" style={{ color: T.muted }}>CERTIFICATE · {certificate.year}</span>
           <h2 id="certificate-title" className="text-xl font-semibold tracking-tight">{certificate.name}</h2>
-          <span className="text-xs self-start rounded-xl border px-3 py-2" style={{ borderColor: T.glassBorder, color: T.accent }}>Provider: {certificate.issuer}</span>
+          <div className="flex items-center gap-3">
+            <img src={certificate.logo} alt={certificate.logoAlt} className="w-10 h-10 shrink-0 rounded-lg object-contain bg-white p-1" />
+            <span className="text-xs rounded-xl border px-3 py-2" style={{ borderColor: T.glassBorder, color: T.accent }}>Provider: {certificate.issuer}</span>
+          </div>
           <p className="text-sm leading-relaxed" style={{ color: T.muted }}>{certificate.desc}</p>
         </div>
       </div>
@@ -329,7 +332,7 @@ function AllCertificationsPage({ T }: { T: Theme }) {
             <button onClick={() => setSelected(c)} aria-label={`View ${c.name} certificate`} className="block w-full aspect-[4/3] overflow-hidden rounded-2xl border mb-5 hover:opacity-80 transition-opacity" style={{ borderColor: T.glassBorder }}><CertificateImage certificate={c} T={T} /></button>
             <div className="flex items-start justify-between gap-3 mb-3">
               <div className="flex items-center gap-2">
-                <img src={c.logo} alt={c.logoAlt} className="w-8 h-8 shrink-0 rounded-lg object-contain bg-white p-1" />
+                <img src={c.logo} alt={c.logoAlt} className="w-10 h-10 shrink-0 rounded-lg object-contain bg-white p-1" />
                 <h3 className="text-sm font-semibold">{c.name}</h3>
               </div>
               <span className="text-[10px] font-mono shrink-0" style={{ color: T.muted }}>{c.year}</span>
@@ -677,7 +680,8 @@ export default function App() {
                 <div className="space-y-2">
                   {CERTS.map((c) => (
                     <div key={c.name} className="flex justify-between items-start gap-3 py-2 text-xs">
-                      <div className="min-w-0"><span className="font-medium">{c.name}</span>
+                      <img src={c.logo} alt={c.logoAlt} className="w-10 h-10 shrink-0 rounded-lg object-contain bg-white p-1" />
+                      <div className="min-w-0 flex-1"><span className="font-medium">{c.name}</span>
                         <span className="block w-fit mt-2 rounded-lg border px-2 py-1 text-[9px] leading-relaxed" style={{ color: T.accent, borderColor: T.glassBorder }}>Provider: {c.issuer}</span>
                       </div>
                       <span className="text-[10px] font-mono shrink-0" style={{ color: T.muted }}>{c.year}</span>
